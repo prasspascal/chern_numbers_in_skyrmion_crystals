@@ -1,0 +1,352 @@
+%====================================================
+%MAKRO NAMES
+%====================================================
+
+\newcommand{\pgi}{Peter Gr\"unberg Institut,
+Forschungszentrum J\"ulich, 52425 J\"ulich, Germany}
+
+\newcommand{\aachen}{Department of Physics, RWTH Aachen University, 52056 Aachen, Germany}
+
+\newcommand{\mainzP}{Institute of Physics, Johannes Gutenberg University Mainz, 55099 Mainz, Germany}
+
+\newcommand{\mainzM}{Institute of Mathematics, Johannes Gutenberg University Mainz, 55099 Mainz, Germany}
+
+\newcommand{\nyc}{Department of Physics, Yeshiva University, New York, NY 10016, USA}
+
+\newcommand{\NCG}{noncommutative geometry}
+
+%====================================================
+%NOTATIONS
+%====================================================
+
+ \DeclareSIUnit\angstrom{\text {Å}}
+
+%\newtheorem{theorem}{Theorem}
+%\newtheorem{corollary}{Corollary}[theorem]
+%\newtheorem{lemma}[theorem]{Lemma}
+%\DeclareMathOperator*{\moyal}{\bigstar}
+
+\newcommand{\moyal}{\bigstar}
+\newcommand{\Pf}{\mathcal{P}_{\mathrm{F}}}
+\newcommand{\pf}{P_{\mathrm{F}}}
+
+\newcommand{\Algebra}{\mathcal{A}_{\omega}}
+\newcommand{\algebra}{\mathbb{A}_{0}}
+
+\newcommand{\realdim}{d}
+\newcommand{\phasespace}{\mathscr{M}}
+
+\newcommand{\Conn}{\mathcal{A}}
+\newcommand{\Curv}{\mathcal{F}}
+\newcommand{\conn}{A}
+\newcommand{\curv}{F}
+
+\newcommand{\PH}{\mathbb{P}\mathcal{H}}
+\newcommand{\ph}{\mathbb{P}H}
+
+\newcommand{\qgeom}{Q}
+\newcommand{\qmetric}{g}
+\newcommand{\Qgeom}{\mathcal{Q}}
+\newcommand{\Qmetric}{\mathrm{g}}
+
+\newcommand{\ad}{\mathrm{ad}}
+
+\newcommand{\cov}{\nabla}
+
+%====================================================
+%VECTORS
+%====================================================
+
+%Standard vector command
+\renewcommand{\vec}[1]{\boldsymbol{#1}} 
+
+%Normalized unit vector
+\newcommand{\hatn}{\hat{\mathbf{n}}}
+
+%Cartesian unit vectors
+\newcommand{\xvec}{ \hat{\mathbf{e}}_x}
+\newcommand{\yvec}{ \hat{\mathbf{e}}_y}
+\newcommand{\zvec}{ \hat{\mathbf{e}}_z}
+\newcommand{\ivec}{ \hat{\mathbf{e}}_i}
+
+%Spherical unit vectors
+\newcommand{\rvec}{ \hat{\mathbf{e}}_r}
+\newcommand{\thetavec}{ \hat{\mathbf{e}}_\theta}
+\newcommand{\phivec}{ \hat{\mathbf{e}}_\phi}
+
+%Cylindrical unit vectors
+\newcommand{\rhovec}{ \hat{\mathbf{e}}_\rho}
+\newcommand{\varphivec}{ \hat{\mathbf{e}}_\varphi}
+
+%Moyal diagrams
+\newcommand{\diagram}[2]{\raisebox{-.0\height}{\includegraphics[scale=1]{../gfx/moy/o#1/o#1d#2.pdf}}}
+\newcommand{\smalldiagram}[2]{\raisebox{-.0\height}{\includegraphics[scale=0.7]{../gfx/moy/o#1/o#1d#2.pdf}}}
+\newcommand{\smallnediagram}[2]{\raisebox{-.0\height}{\includegraphics[scale=0.7]{../gfx/moy_ne/o#1/o#1d#2.pdf}}}
+
+%Sphere
+\newcommand{\sphere}{\raisebox{-.35\height}{\includegraphics[scale=0.04]{../gfx/symbols/sphere.png}}}
+
+%====================================================
+%GENERAL MATH OPERATIONS
+%====================================================
+
+%braidning
+\newcommand{\braid}{\mathrm{Braid}}
+\newcommand{\abraid}{\overline{\mathrm{Braid}}}
+
+%residue
+\newcommand{\Res}[1]{
+\underset{#1}{\mathrm{Res}~}
+}
+
+%c number
+\newcommand{\cnumber}{c~\text{number}}
+
+%Absolute value
+\newcommand{\abs}{\mathrm{\abs}}
+%Wigner transformation
+\newcommand{\wigner}{\mathcal{W}}
+
+%image space
+\newcommand{\im}{\mathrm{im}}
+\newcommand{\rank}{\mathrm{rank}~}
+
+%Reduced Moyal product
+\newcommand{\rstar}{\star_\mathrm{r}}
+
+%Left-Right Partial Tensors
+\newcommand{\lpartial}{\overset{\leftarrow}{\partial}}
+\newcommand{\rpartial}{\overset{\rightarrow}{\partial}}
+\newcommand{\lrpartials}{\overset{\leftarrow}{\boldsymbol{\partial}}\colon\!\mathrm{\reflectbox{$\overset{\leftarrow}{\boldsymbol{\partial}}$}}}
+\newcommand{\rlpartials}{\overset{\rightarrow}{\boldsymbol{\partial}}\colon\!\mathrm{\reflectbox{$\overset{\rightarrow}{\boldsymbol{\partial}}$}}}
+
+%Unitar transformation
+%\newcommand{\U}{\mathcal{U}}
+%\newcommand{\Ud}{\mathcal{U}^\dagger}
+
+%Trace Operation
+\newcommand{\tr}{\mathrm{tr}}
+\newcommand{\Tr}{\mathrm{Tr}}
+
+%Fracture Trace Operation
+\newcommand{\fraktr}{\mathfrak{Tr}}
+
+%Diagonal matrix
+\newcommand{\diag}{\mathrm{diag}}
+
+%Sign Function
+\newcommand{\sgn}{\mathrm{sgn}}
+
+%Identity Operation
+\newcommand{\id}{\mathrm{id}}
+
+%Encircled Moyal Star Operator
+\newcommand{\circdstar}{\raisebox{-.28\height}{\includegraphics[height=0.167in]{../gfx/math/circdstar.pdf}}}
+
+%Differential d
+\newcommand{\dd}{\mathrm{d}}
+
+%Equivalent by partial integration
+\newcommand{\equivpi}{\overset{\mathrm{P.I.}}{\sim}}
+
+%Defined as /  From definition
+\newcommand{\defi}{\overset{\mathrm{def}}{=}}
+
+%Sec hyp
+\newcommand{\sech}{\mathrm{sech}}
+
+%gradient
+\newcommand{\grad}{\mathrm{grad}~}
+
+%interior product
+\newcommand{\interior}{\mathrm{i}}
+
+%====================================================
+%LATTICES
+%====================================================
+
+\newcommand{\volume}{\mathcal{V}}
+
+%====================================================
+%SUSCEPTIBILITY
+%====================================================
+
+%Landau Peierls Susceptibility
+\newcommand{\lp}{\chi_\mathrm{LP}}
+
+%Orbital Magnetic Susceptibility
+\newcommand{\oms}{\chi_\mathrm{oms}}
+
+%====================================================
+%ORBITAL MAGNETIZATION
+%====================================================
+
+%Orbital moment
+\newcommand{\morbbf}{\mathbf{m}_\mathrm{orb}}
+
+%Orbital magnetization (OM)
+\newcommand{\ombf}{\mathbf{m}_\mathrm{om}}
+\newcommand{\om}{m_\mathrm{om}}
+
+%Topological orbital magnetization (TOM)
+\newcommand{\tombf}{\mathbf{m}_\mathrm{tom}}
+\newcommand{\tom}{m_\mathrm{tom}}
+\newcommand{\Tom}{M_\mathrm{tom}}
+
+%Chiral orbital magnetization (COM)
+\newcommand{\combf}{\mathbf{m}_\mathrm{com}}
+\newcommand{\com}{m_\mathrm{com}}
+\newcommand{\Com}{M_\mathrm{com}}
+
+\newcommand{\chiLP}{\chi_\mathrm{LP}^{\uparrow + \downarrow}}
+\newcommand{\mass}{m_\mathrm{e}}
+
+%====================================================
+%GREEN'S FUNCTIONS & MATSUBARA FORMALISM
+%====================================================
+
+%normalordering
+\newcommand{\norder}[1]{: #1 :}
+
+%wick timeordering
+\newcommand{\torder}{\mathcal{T}}
+
+\newcommand{\Corder}[1]{
+	\mathcal{T}_\mathrm{c}
+	\left[
+	#1
+	\right]
+}
+
+
+%Keldysh space Green's function
+\newcommand{\Gk}{\underline{G}}
+
+%Retarded Green's function
+\newcommand{\Gret}{G^{\mathrm{R}}}
+
+%Advanced Green's function
+\newcommand{\Gadv}{G^{\mathrm{A}}}
+
+%Lesser Green's function
+\newcommand{\Gles}{G^<}
+
+%Causal Green's function
+\newcommand{\Gcau}{G^{\mathrm{C}}}
+
+%Matsubara energy
+\newcommand{\maten}{ \xi_n}
+
+%Matsubara frequency
+\newcommand{\matfreq}{ i \omega_n}
+
+%====================================================
+%IMPORTANT KET STATES
+%====================================================
+
+\newcommand{\fockket}{\ket{\lbrace n_q\rbrace_q}}
+\newcommand{\fockbra}{\ket{\lbrace n_q\rbrace_q}}
+
+%====================================================
+%PHYSICAL CONSTANTS & OPERATORS
+%====================================================
+
+%time order operator
+\newcommand{\tordering}{\mathcal{T}}
+
+%electron mass
+\newcommand{\emass}{m_\mathrm{e}}
+
+%bold pi (canonical momentum)
+%\newcommand{\bpi}{\boldsymbol{\pi}}
+
+\newcommand{\bphi}{\boldsymbol{\phi}}
+
+%Vector of Pauli matrices
+\newcommand{\bsigma}{\boldsymbol{\sigma}}
+
+%Vector of Pauli matrices (alternative notation)
+%\newcommand{\btau}{\boldsymbol{\tau}}
+
+%Hopping parameter
+\newcommand{\hop}{\lambda_\mathrm{hop}}
+
+%Exchange parameter
+\newcommand{\xc}{\lambda_\mathrm{xc}}
+
+%magnetic hull
+\newcommand{\hull}{T^r}
+
+%Superconducting parameter
+\newcommand{\superc}{\Delta_{\mathrm{sc}}}
+
+%fermi velocity
+\newcommand{\vf}{v_\mathrm{F}}
+
+%Rashba parameter
+\newcommand{\soi}{\alpha_{\mathrm{R}}}
+
+%Vector Rashba parameter
+\newcommand{\vsoi}{\boldsymbol{\alpha}_{\mathrm{R}}}
+
+%Boltzmann constant
+\newcommand{\boltzmann}{k_\mathrm{B}}
+\newcommand{\kB}{\boltzmann}
+
+%Torque operators
+\newcommand{\btorque}{\mathbf{T}}
+\newcommand{\torque}{T}
+
+%Quantum Many body field  annihilation operator
+\newcommand{\qfield}{\Psi}
+
+%====================================================
+%ELECTROMAGNETISM & GAUGE FIELDS
+%====================================================
+
+%Non-Abelian vector potential
+\newcommand{\apotcal}{\boldsymbol{\mathcal{A}}}
+
+%Non-Abelian field tensor
+\newcommand{\ftenscal}{\mathcal{F}}
+
+%Classical vector potential
+\newcommand{\apot}{\vec{A}}
+
+%Magnetic field
+\newcommand{\bfield}{\mathbf{B}}
+
+%Electric field
+\newcommand{\efield}{\mathbf{E}}
+
+%Magnetization
+
+\newcommand{\magbf}{\mathbf{m}}
+\newcommand{\Magbf}{\mathbf{M}}
+
+%====================================================
+%Relativity
+%====================================================
+\newcommand{\spacetime}{{\mathbb{R}^{1,d}}}
+
+%====================================================
+%Fourier transformation
+%====================================================
+\newcommand{\fourier}[1]{
+	\mathcal{F}
+\left[
+ #1
+\right]
+}
+
+%====================================================
+%TEXTMODE OPERATIONS
+%====================================================
+
+\newcommand{\kspace}{$\mathbf{k}$-space}
+\newcommand{\DMI}{Dzyaloshinskii-Moriya}
+
+
+%====================================================
+%FIGURES
+%====================================================
