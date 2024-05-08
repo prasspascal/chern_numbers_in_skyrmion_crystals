@@ -21,5 +21,7 @@ We approach it from the viewpoint of $C^\ast$-algebras and calculate all admissi
 The repository is divided into three parts. 
 
 1. `./code` contains the Python source code which sets up the spin Hamiltonian, constructs the Fermi projections, and evaluates the Chern numbers.
-2. `./gfx` contains both the data analysis and the data sets that went into the creation of the figures in the manuscript
-3. `./tex` contains the LaTeX source for the manuscript itself and its Supplemental Material
+2. `./gfx` contains both the data analysis and the data sets<sup>*</sup> that went into the creation of the figures in the manuscript.
+3. `./tex` contains the LaTeX source for the manuscript.
+
+<sup>*</sup> To preserve storage space this repository only contains the folder structure for the data sets including their parameter and run time files. For access to the raw binary files please contact the corresponding author.
