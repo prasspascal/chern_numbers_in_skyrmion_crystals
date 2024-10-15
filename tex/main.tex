@@ -126,7 +126,7 @@ Our analysis reveals the topological complexity of electronic states coupled to 
 % -- general words of introduction
 Understanding the electronic properties of noncollinear magnetic systems is crucial for their implementation as novel, energy-efficient bits of information~\cite{Fert2013, Fert2017, Back2020}. 
 A rich class of noncollinear magnets is represented by the family of so-called magnetic multi-$q$ states: periodic arrangements of the local magnetic moments, dominated by their lowest order Fourier modes~\cite{Heinze2011,Hayami2021,Shimizu2022}.  
-The homogeneity of these textures makes them ideal candidates to gain a deeper insight into the electronic structure of noncollinear magnetic materials and the interplay of topological features in real- and reciprocal space~\cite{Hamamoto2015,Gobel2017,Gobel2017b, Lux2024,Tome2021,Gong2021, Divic2022,Hayami2023}.
+The homogeneity of these textures makes them ideal candidates to gain a deeper insight into the electronic structure of noncollinear magnetic materials and the interplay of topological features in real- and reciprocal space~\cite{Hamamoto2015,Gobel2017,Gobel2017b,Lux2024,Matsui2021,Tome2021,Gong2021,Divic2022,Hayami2023}.
 The multi-$q$ texture that holds the highest significance for the context of our work is the multi-$q$ skyrmion lattice. 
 For example, skyrmionic states of this type appear in the family of chiral $B20$ materials such as \ce{MnSi} \cite{Muhlbauer2009, Neubauer2009} and \ce{Fe_{1-x}Co_{x}Si} thin films \cite{Munzer2010,Yu2010}, chiral multiferroic insulators such as \ce{Cu2OSeO3}~\cite{Seki2012, Langner2014}, and have also been discovered in centrosymmetric materials such as $\ce{Gd2PdSi3}$~\cite{Kurumaji2019} and $\ce{GdRu2Si2}$~\cite{Khanh2020}.
 
@@ -144,7 +144,7 @@ which can explain the formation of a gap in the electronic spectrum and its topo
 
 % -- portrait our formalism as a means of studying this interaction in detail
 Finding a more general description of the effect is desirable. 
-A suitable formalism would not rely on the adiabatic limit and, therefore, it would have a wider range of applicability.
+A suitable formalism would not rely on the adiabatic limit and, therefore, it would have a wider range of applicability \cite{Matsui2021}.
 In \cite{Lux2024}, we argue that all phenomena related to the presence of emergent fields are encoded in the observable algebra of the multi-$q$ system, irrespective of any assumption about adiabaticity.
 An observable algebra is a so-called $C^\ast$-algebra \cite{Murphy1990} containing all translations of the Hamiltonian and other observables which can be represented as bounded, self-adjoint operators on a physical Hilbert space.
 For multi-$q$ systems, the observable algebra has a finite number of non-trivial equivalence classes of projections as described by operator $K$-theory \cite{Rordam2000}. 
@@ -157,7 +157,8 @@ In doing so, we obtain an exhaustive topological classification that uniquely id
 Our main findings are threefold: first, we find a single electronic band at the van-Hove singularity carrying the full contribution to the real-space Chern number. 
 The second result concerns the relationship between the momentum space Chern number and the texture's real-space winding, which we find to be more intricate than traditionally assumed.
 %third: topological phase transitions (leaving the algebra)
-Thirdly, we study the evolution of the electronic topology across various phase transitions of the magnetic texture in real space and find that the observability of associated spectral flow is related to subtleties of the observable algebra. 
+Thirdly, we study the evolution of the electronic topology across various phase transitions of the magnetic texture in real space and find that the observability of associated spectral flow is related to subtleties of the observable algebra.
+The existence of these gapless modes is related to the topology of the point defects which emerge at the transition parameter~\cite{Teo2010}.
 In summary, our work leverages the tools of noncommutative geometry to achieve a fine-grained understanding of the electronic states in multi-$q$ textures, which we believe to be key for the educated design of new topological materials based on magnetic structures.
 
 The paper is organized into six sections. 
@@ -176,10 +177,10 @@ Finally, we compute the main Chern numbers for the Fermi energy in one fixed gap
 \label{subsec:definition}
 
 % -- definition of multi-q magnetic order
-To begin with, we consider a general periodic texture $\vec{n}\colon \mathbb{R}^d\to \mathbb{R}^3$ whose Bravais lattice can be constructed from the vectors $\vec{L}_1, \cdots, \vec{L}_d$.
+To begin with, we consider a general periodic texture $\vec{n}\colon \mathbb{R}^d\to \mathbb{R}^3$ whose Bravais lattice can be constructed from the vectors $\vec{L}_1, \ldots, \vec{L}_d$. 
 In other words, these textures are invariant under the action of the discrete translation group $\{m_1 \vec{L}_1 + \ldots  + m_d \vec{L}_d| \vec{m}\in\mathbb{Z}^d\} \subset \mathbb{R}^d$.
 Denote the basis for the corresponding reciprocal lattice by 
-$\vec{Q}_1, \cdots, \vec{Q}_d$, characterized by the property $\vec{L}_i \cdot \vec{Q}_j = 2\pi \delta_{ij}$. 
+$\vec{Q}_1, \ldots, \vec{Q}_d$, characterized by the property $\vec{L}_i \cdot \vec{Q}_j = 2\pi \delta_{ij}$. 
 The resulting reciprocal lattice then comes in the form of
 \begin{equation}
     \vec{G}_{\vec{m}} = m_1 \vec{Q}_1 + \ldots  + m_d \vec{Q}_d,
@@ -198,10 +199,13 @@ In contrast, for a sufficiently smooth texture, the Fourier decomposition will b
 
 In this regime, a periodic magnetic texture can be thought of as a linear superposition of a few fundamental modes, fully characterized by a set of $r$ coexisting wave vectors $\vec{q}_1, \ldots \vec{q}_r$ together with their initial phase conditions $\varphi_1, \ldots, \varphi_r$ and amplitudes $\vec{n}_{\vec{q}_{1}},\ldots, \vec{n}_{\vec{q}_{r}}$ at the origin of some arbitrary, but fixed coordinate system:
 \begin{equation}
-    \vec{n}(\vec{x})\approx \sum_{i=1}^r  \vec{n}_{\vec{q}_{i}}e^{i(\vec{q}_i\cdot\vec{x}+\varphi_{i})}.
+    \vec{n}(\vec{x})\approx \sum_{i=-r}^r  \vec{n}_{\vec{q}_{i}}e^{i(\vec{q}_i\cdot\vec{x}+\varphi_{i})}
     \label{eq:fourier_modes}
 \end{equation}
+with $\vec{q}_{-i}\coloneqq -\vec{q}_i$, $\vec{n}_{\vec{q}_{-i}}\coloneqq\vec{n}_{\vec{q}_{i}}^\ast$, and zero mode with $\vec{q}_0=0$, $\varphi_0=0$, and $\vec{n}_{\vec{q}_0}\in\mathbb{R}$.
+The initial phase conditions are put in by design to clarify the intended phases at the origin and could be absorbed by the complex amplitudes.
 The $q$-vectors in the summation above can be any of the reciprocal lattice vectors $\vec{G}_{\vec{m}}$ with the coefficients $m_i \in \lbrace -1,0,1\rbrace$ (see Eq.(\ref{eq:Gm_definition})), i.e., the lowest order Fourier modes.
+Thus, $r$ may exceed the dimensionality $d$.
 In general, the vector field $\vec{n}(\vec{x})$ has lost its normalization after the truncation of higher-order modes. 
 A reconstruction of the normalization as $\hatn(\vec{x})=\vec{n}(\vec{x})/||\vec{n}(\vec{x})||$ still gives an excellent approximation to the original vector field  albeit for the price of re-introducing higher order modes.
 Examples of multi-$q$ textures of this kind include the $A$-phase of MnSi which is characterized by three $q$-vectors~\cite{Neubauer2009}, or the atomic scale skyrmion lattice in Fe/Ir(111) thin films which exhibits a superposition of two $q$-vectors~\cite{Heinze2011}.
@@ -217,11 +221,28 @@ From now on, we parameterize these more general superpositions as
 which can be seen to be the equivalent trigonometric formulation of Eq.~(\ref{eq:fourier_modes}) and which is more commonly used in the literature on multi-$q$ states, e.g., \cite{Shimizu2021,Shimizu2022, Nakazawa2019, Freimuth2013}.
 Here, $\psi_i^c$, $\psi_i^s$ are the amplitudes of the cosinusoidal and sinusoidal waves with the wave vectors $\vec{q}_i$, respectively, $\ivec^c$ and $\ivec^s$ are unit vectors, and $\hat{\vec{e}}^0$ is another independent unit vector for the direction of the constant net magnetization of magnitude $m$. In case of a normalized texture $\hatn(\vec{x})=\vec{n}(\vec{x})/||\vec{n}(\vec{x})||$, $m$ no longer determines the actual net magnetization but is still a related parameter. For example, one has $\lim_{m\to\infty} \hatn(\vec{x}) = \hat{\vec{e}}^0$, the collinear ferromagnet.
 
+% -- phase space
+A texture which is constructed this way from $r$ spin waves depends on the $r$ corresponding phases $\omega_i: \mathbb{R}^d \to S^1$, $\omega_i(\vec{x})=(\vec{q}_i\cdot\vec{x}+\varphi_i)~\mod 2\pi$.
+However, these phases are in general not independent of one another, as they are determined by the choice of the $q$-vectors.
+The phase values which can be reached at the same point in real space lie in the image of the map $\vec{\omega}: \mathbb{R}^d\to T^r$.
+Only if one has $r$ $\mathbb{R}$-linear independent $q$-vectors every point in this phase space can be accessed, which is only possible for $r\leq d$.
+One can also consider the scenario where a selection of $q$-vectors is linearly dependent.
+The dimension of the image $\vec{\omega}(\mathbb{R}^d)$ is then not immediately apparent: 
+let $\tilde{r}$ denote the dimension of the linear subspace of $\mathbb{R}^d$ spanned by the $r$ wave vectors.
+In case that the $\mathbb{R}$-linear dependent wave vectors are also linear dependent over $\mathbb{Q}$, there exists a rational relation between the phases and the texture is periodic. Then, the image $\vec{\omega}(\mathbb{R}^d)\subset T^r$ is of dimension $\tilde{r}$ and isomorphic to $T^{\tilde{r}}$.
+Otherwise, it may be dense in a submanifold of $T^r$ with dimension equivalent to the number of rationally independent wave vectors.
+This is the case for $q$-vectors from incommensurate lattices rendering the texture aperiodic.
+A simple example in $d=1$ are two spin waves with phases of an irrational slope ratio, which wrap densely around $T^2$.
+
 \subsection{Real-space topological classification of multi-\texorpdfstring{$q$}{q} textures}
 \label{subsec:real_space_classification}
 
-% -- topological phase transitions by tuning phase/ferromagnetic degree of freedom
-Whenever $\| \vec{n}(\vec{x}) \| > 0 $ for all $\vec{x} \in \mathbb{R}^d$, the normalization procedure will lead to a continuous field of unit vectors $\hatn$ which we can regard as an element of $C(T^d, S^2)$, the space of continuous functions from the $d$-torus to the $2$-sphere. 
+Coming back to the case of periodic textures, there can be at most $d$ $\mathbb{Q}$-linear independent $q$-vectors and one has fixed rational relations between the initial phases.
+In the following the periodic case with $\tilde{r}=d$ is assumed.
+As the texture consists of a finite sum of smooth functions over $S^1$, it can be considered as an element of $C^\infty(T^d, \mathbb{R}^3)$, the space of smooth maps from the $d$-torus to $\mathbb{R}^3$.
+Whenever $\| \vec{n}(\vec{x}) \| > 0 $ for all $\vec{x} \in \mathbb{R}^d$, the normalization procedure will lead to a smooth field of unit vectors $\hatn$, and thus $C^\infty(T^d, S^2)$.
+By setting $\vec{x}=0$, one can conveniently address $T^r$ with the corresponding $\varphi_i$ and restrict it to $T^d$ by using the phase relations.
+
 The topological classification of these maps is based on the concept of homotopy.
 Two maps $f,g \in C(T^d, S^2)$ are called homotopic if there exists a continuous function
 $
@@ -229,18 +250,16 @@ $
 $
 such that $H(t,0) = f(t)$ and $H(t,1)=g(t)$~\cite[Ch.~7]{Lee2010}. Homotopy forms an equivalence relation on $C(T^d, S^2)$ with a corresponding quotient space denoted by $[T^d, S^2]$ - the space of homotopy classes.
 The most well-studied example of such quotients is the so-called homotopy groups of the sphere $\pi_n(S^k) = [S^n, S^k]$.
-
-In dimension two, the elements of $[T^2, S^2]$ can be classified by their topological degree.
+In dimension two with two linear independent $q$-vectors, the elements of $[T^2, S^2]$ can be classified by their topological degree.
 Loosely speaking, the degree of a map $f$ counts the number of times the domain of $f$ is wrapped around the image of $f$. 
-If a texture $\hatn \in C(T^2,S^2)$ is smooth in addition to being continuous (in fact, every element of $[T^2, S^2]$ is homotopic to a smooth map), the degree of $\hatn$ can be calculated as \cite[Thm.~17.35]{Lee2012}
+Since the texture $\hatn \in C^\infty(T^2,S^2)$ is smooth in addition to being continuous (in fact, every element of $[T^2, S^2]$ is homotopic to a smooth map), the degree of $\hatn$ can be calculated as \cite[Thm.~17.35]{Lee2012}
 \begin{align}
     \mathrm{deg}~ \hatn = \frac{1}{4 \pi } \int\limits_{T^2} \dd \vec{\varphi} ~\hatn \cdot( \partial_{\varphi_1} \hatn \times \partial_{\varphi_2} \hatn) 
     \in \mathbb{Z}.
     \label{eq:degree}
 \end{align}
 If one has two continuous maps $f,g \colon T^2 \to S^2$, then $\mathrm{deg}~f = \mathrm{def}~g$ if and only if $f$ and $g$ are homotopic -- a result known as Hopf's theorem \cite[p.~51]{Milnor1965}. 
-Therefore, Hopf's theorem provides an isomorphism 
-$[T^2, S^2] \cong \mathbb{Z}$ which provides a means of topological classification.
+Therefore, Hopf's theorem provides an isomorphism $[T^2, S^2] \cong \mathbb{Z}$ which provides a means of topological classification.
 
 \subsection{Topological phase transitions in real-space}
 \label{subsec:real_space_phase_transitions}
@@ -249,6 +268,7 @@ Parameter manipulation, such as tuning the spin waves' phase relations $\varphi_
 However, tuning the parameters over certain critical points can lead to destructive interference.
 In this case, $\| \vec{n}(\vec{x}_c) \| = 0$ will occur at critical positions $\vec{x}_c$ in real-space.
 The normalization procedure is thus undefined at $\vec{x}_c$ and no matter which choice will be made to redefine $\hatn(\vec{x})$, the resulting function $\hatn(\vec{x})$ will be discontinuous at the singularities $\vec{x}=\vec{x}_c$.
+This is of significant consequence, as the spectral properties of an electronic system coupled to this texture are sensitive to the topology of its singularities~\cite{Teo2010}.
 In practice, we can regularize the singularity by making the choice
 \begin{align}
     \hatn = \frac{\vec{n}}{ \| \vec{n} \| } \longrightarrow   \frac{\vec{n}}{ \| \vec{n} \| +  \eta }  =   \hatn_\eta ,
@@ -296,7 +316,7 @@ Instead of the continuum $\mathbb{R}^d$, multi-$q$ textures are often studied fr
 This Bravais lattice can generally be different from the Bravais lattice of the magnetic texture, and interesting band structure effects can result from the interference of these two patterns.
 Therefore, we choose a different notation for this case and define the $d$-dimensional electronic Bravais lattice by specifying its lattice vectors $\{\vec{a}_i\}$ and reciprocal lattice vectors $\{\vec{b}_j\}$, such that $\vec{a}_i\cdot \vec{b}_j=2\pi\delta_{ij}$.
 The $r$ wave vectors $\{\vec{q}_i\}$ of the multi-$q$ texture can now be decomposed into $\vec{q}_i=\sum_j^d \theta_{ij} \vec{b}_j$. 
-Accordingly, the real-space position of the lattice site with integer label $\vec{m}\in\mathbb{Z}^d$ is $\vec{x}_{\vec{m}}=\sum_j^d m_j \vec{a_j}$.
+Accordingly, the real-space position of the lattice site with integer label $\vec{m}\in\mathbb{Z}^d$ is $\vec{x}_{\vec{m}}=\sum_j^d m_j \vec{a}_j$.
 This gives
 \begin{align}
      \vec{x}_{\vec{m}} \cdot \vec{q}_i 
@@ -322,7 +342,7 @@ The natural action $\tau$ of the lattice translation group $\mathbb{Z}^d$ on the
     [\vec{\omega}(\vec{x}_{\vec{m}}) + 2\pi \theta \vec{l} ]  \equiv \tau_{\vec{l}}  \vec{\omega}(\vec{x}_{\vec{m}})
     \label{eq:phasetranslations}
 \end{equation}
-with $\vec{l}\in\mathbb{Z}$.
+with $\vec{l}\in\mathbb{Z}^d$.
 If we take the right-hand side as the definition of $\tau$, we can relate all phase factors to the origin:
 \begin{align}
     \vec{\omega}(\vec{x}_{\vec{m}}) = \tau_{\vec{m}}  \vec{\omega}(\vec{x}_{\vec{0}})
@@ -335,13 +355,10 @@ It is then possible to take a look at the entire orbit under lattice translation
     = \lbrace \tau_{\vec{m}}  \vec{\varphi}  ~|~ \vec{m} \in \mathbb{Z}^d\rbrace  \subset T^r,
 \end{align}
 and refer to the closure of $\mathbb{Z}^d \vec{\varphi}$ in $T^r$ as the hull $\Omega$ of the magnetic pattern.
-If the translation action is ergodic on $T^r$, then $\mathbb{Z}^d \vec{\varphi}$ will form a dense subset of $T^r$ whose closure is $\Omega = T^r$ for all $\vec{\varphi} \in T^r$.
-While in the following, we assume that this is the case, it is possible to consider more general settings.
-For example, a selection of $q$-vectors might be linearly dependent.
-The dimension of $\Omega$ is then not immediately apparent: let $\tilde{r}$ denote the dimension of the linear subspace of $\mathbb{R}^d$ spanned by the $r$ wave vectors.
-In case that the $\mathbb{R}$-linear dependent wave vectors are also linear dependent over $\mathbb{Q}$, the orbit $\mathbb{Z}^d \vec{\varphi}$ is only dense in the torus of dimension $\tilde{r}$.
-Otherwise, it is dense in the torus of the dimension equivalent to the number of rationally independent wave vectors.
-In the following, considering $\hull\cong T^{\tilde{r}}$ will prove to be sufficient, as we simply replace linear dependent $q$-vectors by their linear combination.
+If the translation action is ergodic on $T^r$, e.g. for $r$ $\mathbb{R}$-linear independent lattice incommensurate wave vectors with $\theta_{ik}\in\mathbb{R}\setminus\mathbb{Q}$, then $\mathbb{Z}^d \vec{\varphi}$ will form a dense subset of $T^r$ whose closure is $\Omega = T^r$ for all $\vec{\varphi} \in T^r$.
+For the remainder of this work, we assume either immediately this case or we take on a periodic multi-$q$ texture with some rationally linear dependent lattice incommensurate wave vectors.
+Then, we can replace the dependent phases using the rational phase relations, thereby reducing
+$r$ to $\tilde{r}$, the number of $\mathbb{R}$-linear independent wave vectors, to return to the first case with ergodicity on $T^{\tilde{r}}$.
 
 \subsection{The hexagonal skyrmion crystal on the triangular lattice}
 \label{subsec:our_model}
@@ -381,20 +398,22 @@ As such, it can be eliminated from the whole description of the texture from the
 However, the construction of the hexagonal skyrmion lattice is much simplified with the superfluous, yet helpful degree of freedom which can also assist in the interpretation of small angle neutron scattering data for example~\cite{Muhlbauer2009}.
 
 \figureI
-\figureII
 
-The degree of $\hatn$, introduced in Eq.~(\ref{eq:degree}) is the first important order parameter characterizing the texture.
+The degree of $\hatn \in C^\infty(T^2,S^2)$, introduced in Eq.~(\ref{eq:degree}) is the first important order parameter characterizing the texture.
 In Fig. \ref{fig:3QskxPD} (a), we show how $\deg \hatn$ depends on $m$ and $\varphi$, thereby reproducing the result of \cite[Fig.~6]{Shimizu2022}.
 Implicit equations for the phase boundaries were already determined in \cite[Eq.~(29)]{Shimizu2022}.
-Another relevant order parameter for the interpretation of the electronic phase diagrams later on is the net magnetization
+Another relevant order parameter of $\hatn \in C^\infty(T^2,S^2)$ for the interpretation of the electronic phase diagrams later on is the net magnetization
 \begin{align}
     \braket{\hatn} = \lim\limits_{|V|\to\infty} \frac{1}{|V|} \int\limits_V \dd^2 \vec{x} ~ \hatn(\vec{\omega}(\vec{x})) =\frac{1}{|T^2|}
-\int\limits_{T^2}\dd^2\vec{\varphi} ~ \hatn(\vec{\varphi}).
+\int\limits_{T^2}\dd^2\vec{\varphi} ~ \hatn(\vec{\varphi}),
 \label{eq:magnetization_formula}
 \end{align}
+where the transition from real space to the $2$-torus of phases is understood in the sense of section~\ref{subsec:real_space_classification}.
 One finds $\braket{\hat{n}_x} =\braket{\hat{n}_y}=0$, while $\braket{\hat{n}_z}$ shows a nontrivial dependence on $m$ and $\varphi$ as demonstrated by Fig.~\ref{fig:3QskxPD} (b).
 When $\braket{\hatn} = 0$, the magnetic texture is time-reversal invariant modulo a proper Euclidean symmetry operation. 
 Since this imposes additional constraints on the associated electronic system, we plot the resulting phase boundary as a solid black line in Fig.~\ref{fig:3QskxPD}b).
+
+\figureII
 
 Mathematically, important topological properties of the electronic system coupled to this magnetic texture can be discovered when $\vartheta$ takes irrational values.
 In this case, the map
@@ -472,18 +491,17 @@ The fundamental property that allows for a concise algebraic description is the 
 
 As a first observation, the group of lattice translations $\mathbb{Z}^d$ has a corresponding continuous action on the algebra of continuous functions on the $r$-torus, $C(\hull)$, given via $C^\ast$-au\-to\-mor\-phisms:
 \begin{align}
-    & \alpha \colon \mathbb{Z}^d \to \mathrm{Aut}( C(\hull) )
-    \\ 
+    & \alpha \colon \mathbb{Z}^d \to \mathrm{Aut}( C(\hull) ), \ \vec{m} \mapsto \alpha_{\vec{m}}\\ 
     & (\alpha_{\vec{m}} f)(\vec{\varphi}) \equiv  f( \tau_{-\vec{m}}\vec{\varphi}) = f(\vec{\varphi} - 2\pi\theta\vec{m}),
 \end{align}
 which we want to use to build the crossed product algebra.
 Recall that $\tau$ are the translations defined in Eq.~(\ref{eq:phasetranslations}).
 If one denotes the abstract generators of $\mathbb{Z}^d$ by $t_1, \ldots, t_d$, then one can think of $\mathbb{Z}^d$ as an abelian group with presentation
 \begin{align}
-    \mathbb{Z}^d = \braket{ t_1, \ldots, t_d ~|~ [t_i,t_j]_{i,j=1,\ldots,d}}.
+    \mathbb{Z}^d = \braket{ t_1, \ldots, t_d ~|~ t_i t_j = t_j t_i}.
 \end{align}
-We employ a multi-index notation and write $t^{\vec{m}} = t_1^{m_1} \cdots  t_d^{m_d}$ for $\vec{m} \in \mathbb{Z}^d$.
-The group algebra $\mathbb{C} \mathbb{Z}^d$ then consists of formal summations $\sum_{\vec{m} \in \mathbb{Z}^d} c_m t^m$, where only finitely many coefficients $c_m \in \mathbb{C}$ are different from zero and the multiplication law is inherited from the group structure by a linear extension.
+We employ a multi-index notation and write $t^{\vec{m}} = t_1^{m_1} \ldots t_d^{m_d}$ for $\vec{m} \in \mathbb{Z}^d$.
+The group algebra $\mathbb{C} \mathbb{Z}^d$ then consists of formal summations $\sum_{\vec{m} \in \mathbb{Z}^d} c_{\vec{m}} t^{\vec{m}}$, where only finitely many coefficients $c_{\vec{m}} \in \mathbb{C}$ are different from zero and the multiplication law is inherited from the group structure by a linear extension.
 
 % -- crossed product vector space
 As a vector space, the crossed product of the algebra $C(\hull)$ and the group $\mathbb{Z}^d$ is then defined as the $\mathbb{C}$-linear tensor product $C(\hull) \otimes \mathbb{C}\mathbb{Z}^d$ with a typical element in the form of
@@ -507,7 +525,7 @@ This requires an additional structure that is introduced in the following sectio
 \label{subsec:noncommutative_torus}
 
 $C^\ast$-algebras have a long history in quantum mechanics \cite{Murray1936} and provide a suitable framework to make sense of operators such as the resolvent and the Fermi projection.
-First, recall that a Banach algebra is an algebra $B$ that is complete with respect to a norm $\| . \|$ fulfilling $\| a b \| \leq \|a \| \|b\|$ for all $a,b \in B$.
+First, recall that a Banach algebra is an algebra $B$ over a field that is complete with respect to a norm $\| . \|$ fulfilling $\| a b \| \leq \|a \| \|b\|$ for all $a,b \in B$.
 A $C^\ast$-algebra $A$ is then a complex Banach algebra with an anti-multiplicative, anti-linear involution $\ast$, i.e., a Banach $\ast$-algebra, for which the so-called $C^\ast$-identity
 \begin{equation}
     \|a^\ast a \| = \|a \|^2, 
@@ -576,7 +594,7 @@ The faithfulness shows that our algebra does not contain any redundant or unnece
 
 We can think of $C(T^r)$ in terms of the universal $C^\ast$-algebra
 \begin{align}
-    C(T^r) = \braket{ u_1, \ldots, u_r ~|~ [u_i, u_j]},
+    C(T^r) = \braket{ u_1, \ldots, u_r ~|~ u_i u_j = u_j u_i},
 \end{align}
 where we represent the generators $u_i$ as the continuous phase factors $u_j(\vec{\varphi})= e^{i \varphi_j }$.
 The generators $u_j$ obey the following commutation relation in $C(\hull)\rtimes_{\theta} \mathbb{Z}^d$
@@ -587,7 +605,7 @@ The generators $u_j$ obey the following commutation relation in $C(\hull)\rtimes
 which follows from Eq.~(\ref{eq:crossed_product_multiplication}).
 This means if we combine the generators of translations $t_i$ and the generators of continuous functions $u_j$ into a single notation:
 \begin{align}
-    \vec{\gamma} = (\gamma_1,\ldots, \gamma_{r+d}) = (t_1, \cdots, t_d, u_1, \ldots, u_r),
+    \vec{\gamma} = (\gamma_1,\ldots, \gamma_{r+d}) = (t_1, \ldots, t_d, u_1, \ldots, u_r),
 \end{align}
 then we can give an equivalent description of $C(\hull)\rtimes_{\theta} \mathbb{Z}^d$ in terms of the universal $C^\ast$-algebra
 \begin{align}
@@ -607,7 +625,7 @@ In conclusion, the observable algebra of spin-$1/2$ electrons on the $\mathbb{Z}
 \begin{align}
     \mathcal{A} = M_2(\mathbb{C}) \otimes  ( C(\hull)\rtimes_{\theta} \mathbb{Z}^d ),
 \end{align}
-and we can extent $\pi_{\vec{\varphi}}$ to $\mathcal{A}$ by setting
+and we can extend $\pi_{\vec{\varphi}}$ to $\mathcal{A}$ by setting
 \begin{equation}
     \pi_{\vec{\varphi}}(m \otimes a) = m \otimes \pi_{\vec{\varphi}}(a),
 \end{equation}
@@ -666,7 +684,7 @@ As a starting point, there is a canonical trace on $C(\hull)$ given by
 \begin{align}
     \tau_{C(\hull)}(f) = \frac{1}{|\hull|} \int_{\hull}\dd \vec{\varphi} ~ f( \vec{\varphi}),
 \end{align}
-with the useful property of being is invariant under the $\mathbb{Z}^d$-automorphisms $\alpha$: 
+with the useful property of being invariant under the $\mathbb{Z}^d$-automorphisms $\alpha$: 
 \begin{equation}
     \tau_{C(\hull)}(\alpha_{\vec{m}}f) = \tau_{C(\hull)}(f), ~ \forall  \vec{m}\in \mathbb{Z}^d .
 \end{equation}
@@ -693,7 +711,7 @@ in terms of the summation
    &= \frac{1}{|V|} \sum_{\vec{m} \in V} \tr~ \bra{0} \pi_{ \tau_{-\vec{m}}\vec{\varphi}}(a) \ket{0}.
 \end{align}
 By our assumption, $\tau\colon T^r \to T^r$ is ergodic. We then have a measure-preserving ergodic system $(T^r, \mathscr{B}, \mu, \tau)$, where $\mathscr{B}$ is the Borel $\sigma$-algebra of $T^r$, $\tau$ are the irrational rotations acting on $T^r$ and $\mu$ is the Lebesgue measure on $T^r$, invariant under $\tau$.
-In fact, $\tau$ is uniquely ergodic in the sense that the Lesbesgue measure is the only $\tau$-invariant measure on $T^r$ \cite[Def. 4.1.7.]{Katok1995}.
+In fact, $\tau$ is uniquely ergodic in the sense that the Lebesgue measure is the only $\tau$-invariant measure on $T^r$ \cite[Def. 4.1.7.]{Katok1995}.
 Uniquely ergodic systems fulfill a stronger version of Birkhoff's ergodic theorem \cite[Prop. 4.1.13.]{Katok1995} such that
 \begin{align}
     \lim_{|V| \to \infty} \frac{1}{|V|} \sum_{\vec{m} \in V} \tr~ \bra{0} \pi_{ \tau_{-\vec{m}}\vec{\varphi}}(a) \ket{0}
@@ -735,7 +753,7 @@ With the direct sum on $\mathcal{P}_\infty(A)$ given by
 the set of equivalence classes $\mathcal{P}_\infty(A)/\sim_0$ is an abelian semi-group.
 The notion of an inverse element which is crucial in the definition of a group is missing as of now.
 
-If the $C^\ast$-algebra $A$ is unital, we can straightforwardly generate the Groethendieck group from this semi-group to define $K_0(A)$.
+If the $C^\ast$-algebra $A$ is unital, we can straightforwardly generate the Grothendieck group from this semi-group to define $K_0(A)$.
 One can view this process as similar to the way the integers are constructed out of natural numbers by ``inventing'' negative numbers.
 % Two homotopic projections in $M_n(\mathbb{C})\otimes A$ are then in the same equivalence class in $K_0(A)$, and 
 $K_0(A)$ is the only group, up to a unique group homomorphism, with the property that 
@@ -747,10 +765,10 @@ For the observable algebra of spin-$1/2$ electrons $\mathcal{A}=M_2(\mathbb{C})\
 \begin{equation}
     K_0(\mathcal{A})=K_0(\mathcal{A}_\theta)=\mathbb{Z}^{2^{r+d-1}},
 \end{equation}
-independent on the matrix $\theta$. For more on the $K_0$-group for higher dimensional noncommutative tori, we refer to \cite{Rieffel1988}. This means, that there are $2^{r+d-1}$ generators $[e_J]$, which can be uniquely labeled by the subsets of indices $J\subseteq\{t_1, \cdots, t_d, u_1, \ldots, u_r\}$ of even cardinality.
-The equivalence class of any projection from $P_\infty(\mathcal{A})$ can be uniquely decomposed into these generators with integer coeffcients $n_J$:
+independent on the matrix $\theta$. For more on the $K_0$-group for higher dimensional noncommutative tori, we refer to \cite{Rieffel1988}. This means, that there are $2^{r+d-1}$ generators $[e_J]$, which can be uniquely labeled by the subsets of indices $J\subseteq\{t_1, \ldots, t_d, u_1, \ldots, u_r\}$ of even cardinality.
+The equivalence class of any projection from $P_\infty(\mathcal{A})$ can be uniquely decomposed into these generators with integer coefficients $n_J$:
 \begin{equation}
-    [p]_0 = \sum_{\substack{J\subseteq\{t_1, \cdots, t_d, u_1, \ldots, u_r\}\\ |J|\ \text{even}}} n_J [e_J]_0.
+    [p]_0 = \sum_{\substack{J\subseteq\{t_1, \ldots, t_d, u_1, \ldots, u_r\}\\ |J|\ \text{even}}} n_J [e_J]_0.
 \end{equation}
 If $p$ is homotopically deformed, it stays inside its $K_0$ class, and the integer labels $n_J$ do not change.
 They are the complete set of topological invariants associated with the projection $p$.
@@ -775,7 +793,7 @@ This way, one obtains a cyclic $n$-cocycle of the form \cite[III.1.$\alpha$. Pro
 \begin{equation}
     \eta(a_0,\dots,a_n) = \int a_0 da_1\dots da_n.
 \end{equation}
-In particular, if we have a linear functional with the tracial property, such as the trace of the noncommutative torus $\mathcal{T}$, as well as $n$ mutually commuting derivations $\partial_1,\dots,\partial_n: A\rightarrow A$ such that $\mathcal{T}(\partial_j(a))=0$ for any $a\in A$ and $j\in\{1,\dots,n\}$, then a cyclic $n$-cocycle is given by \cite[Example~3.6.6]{Khalkhali2013}
+In particular, if we have a linear functional with the trace property, such as the trace of the noncommutative torus $\mathcal{T}$, as well as $n$ mutually commuting derivations $\partial_1,\dots,\partial_n: A\rightarrow A$ such that $\mathcal{T}(\partial_j(a))=0$ for any $a\in A$ and $j\in\{1,\dots,n\}$, then a cyclic $n$-cocycle is given by \cite[Example~3.6.6]{Khalkhali2013}
 \begin{equation}
     \eta(a_0,\dots,a_n) := \sum_{\sigma\in S_n} \mathrm{sgn}(\sigma)\ \mathcal{T}(a_0 \partial_{\sigma(1)}a_1\dots \partial_{\sigma(n)}a_n),
 \end{equation}
@@ -786,19 +804,19 @@ where $S_n$ denotes the permutation group of $n$ elements.
 In the case of the noncommutative torus, we can define derivations associated with the real space and the phase space.
 For this, we consider an action of the Lie group $T^{r+d}$ on the $C^\ast$-algebra $\mathcal{A}_\theta=C(\hull)\rtimes_\theta \mathbb{Z}^d$. Let the action $\rho: T^{r+d} \to \textrm{Aut}(\mathcal{A}_\theta)$ act on the generators and their coefficients the following way
 \begin{align}
-    \rho_\lambda(f)(\varphi) &= f(\varphi+ \tilde{\lambda}),\\
-    \rho_\lambda(t_i) &= \bar{\lambda}_i^{-1} t_i,\quad i=1,...,d,
+    \rho_{\vec{\lambda}}(f)(\vec{\varphi}) &= f(\vec{\varphi}+ \vec{\xi}),\\
+    \rho_{\vec{\lambda}}(t_i) &= e^{-ik_i} t_i,\quad i=1,...,d,
 \end{align}
-with $\lambda=(\tilde{\lambda},\bar{\lambda})\in T^{r+d}$ and $f\in C(\hull)$.
-This can be extended to a strongly continuous group of $\ast$-automorphisms on the noncommutative torus \cite[Prop.~3.10.]{Prodan2017}.
+with $\vec{\lambda}=(\vec{\xi},\vec{k})\in [0,2\pi]^{r+d}$ and $f\in C(\hull)$.
+This can be extended to a point-wise norm continuous group of $\ast$-automorphisms on the noncommutative torus \cite[Prop.~3.10.]{Prodan2017}.
 
 Elements of the algebra for which the automorphisms $\rho_\lambda$ are $n$-times differentiable for $\lambda$ are called $n$-times differentiable as well.
 They form a linear subspace dense in $\mathcal{A}_\theta$.
 The dense subalgebra $\mathscr{A}_\theta$ of smooth, i.e., infinitely differentiable, elements is a Fr\'echet pre-$C^\ast$-algebra \cite[Prop.~3.45]{Gracia2000}.
-Since its $C^*$-completion is the full noncommutative torus, the inclusion $i:\mathscr{A}_\theta\to\mathcal{A}_\theta$ induces an isomorphism of $K_0$-groups $K_0(i): K_0(\mathscr{A}_\theta)\to K_0(\mathcal{A}_\theta)$. \cite[Thm.~3.44]{Gracia2000}. 
+Since its $C^*$-completion is the full noncommutative torus, the inclusion $i:\mathscr{A}_\theta\to\mathcal{A}_\theta$ induces an isomorphism of $K_0$-groups $K_0(i): K_0(\mathscr{A}_\theta)\to K_0(\mathcal{A}_\theta)$ \cite[Thm.~3.44]{Gracia2000}. 
 This means the smooth noncommutative torus $\mathscr{A}_\theta$ has the same $K_0$ group as the full noncommutative torus $C^\ast$-algebra $\mathcal{A}_\theta$ itself.
 
-Further, the pre-$C^\ast$-property implies that the algebra is closed under holomorphic functional calculus, which is crucial for our purpose. 
+Further, the pre-$C^\ast$-property implies that the algebra is stable under holomorphic functional calculus, which is crucial for our purpose. 
 It guarantees to us that any Fermi projection $p_F$ of the Hamiltonian $h$ belongs to the smooth noncommutative torus, provided the Fermi energy $E_F$ lies within a gap of the Hamiltonians spectrum $\sigma(h)$. 
 Let $E_F\notin \sigma(h)$ and $\Gamma_F$ be the contour in $\mathbb{C}$ which encircles $\sigma(h)\cap (-\infty,E_F)$ and does not intersect $\sigma(h)$. 
 Then the Fermi projection $p_F$ may be defined by the Riesz projector
@@ -808,11 +826,11 @@ Then the Fermi projection $p_F$ may be defined by the Riesz projector
 \end{equation}
 The derivations are obtained from differentiating the torus action are unbounded, closed $\ast$-derivations of the form % their representation
 \begin{equation}
-    \partial_j^u a =\partial_j^u \sum_{\vec{n}\in \mathbb{Z}^d} a_{\vec{n}} t_{\vec{n}} = \sum_{\vec{n}\in \mathbb{Z}^d}  (\partial_j a_{\vec{n}}) t_{\vec{n}}
+    \partial_j^u a =\partial_j^u \sum_{\vec{n}\in \mathbb{Z}^d} a_{\vec{n}} \otimes t_{\vec{n}} = \sum_{\vec{n}\in \mathbb{Z}^d}  (\partial_{\varphi_j} a_{\vec{n}}) \otimes t_{\vec{n}}
 \end{equation}
 and
 \begin{equation}
-    \partial_j^t a =\partial_j^t \sum_{\vec{n}\in \mathbb{Z}^d} a_{\vec{n}} t_{\vec{n}} = -i \sum_{\vec{n}\in \mathbb{Z}^d} n_j a_{\vec{n}} t_{\vec{n}}.
+    \partial_j^t a =\partial_j^t \sum_{\vec{n}\in \mathbb{Z}^d} a_{\vec{n}} \otimes t_{\vec{n}} = -i \sum_{\vec{n}\in \mathbb{Z}^d} n_j a_{\vec{n}} \otimes t_{\vec{n}}.
 \end{equation}
 They mutually commute and the trace of the derivation of any algebra element is zero.
 % -- Chern numbers
@@ -821,14 +839,14 @@ Putting this all together with the proper prefactor and the internal spin degree
     Ch_J([p]_0) = \frac{(2\pi i )^{ | J| /2 }}{(| J| /2)!}  \sum_{\sigma \in S_{|J|} } (-1)^\sigma \mathcal{T}\left( p \prod_{j \in J} \partial_{\sigma_j} p \right),
     \label{eq:Chernnumber}
 \end{align}
-with $J\subseteq \{t_1, \cdots, t_d, u_1, \ldots, u_r\}$ and $|J|$ even. For the particular case of $J=\emptyset$, one has $ Ch_\emptyset([p]_0) = \mathcal{T}(p)$.
-Since cyclic cocyles on an algebra induce group homomorphisms from its $K_0$-group to $\mathbb{C}$, we can evaluate the Chern number of each projection's equivalence class by its linear decomposition into the $K_0$-groups generators and the evaluation of the Chern characters of the generators. For the projection class
+with $J\subseteq \{t_1, \ldots, t_d, u_1, \ldots, u_r\}$ and $|J|$ even. For the particular case of $J=\emptyset$, one has $ Ch_\emptyset([p]_0) = \mathcal{T}(p)$.
+Since cyclic cocycles on an algebra induce group homomorphisms from its $K_0$-group to $\mathbb{C}$, we can evaluate the Chern number of each projection's equivalence class by its linear decomposition into the $K_0$-groups generators and the evaluation of the Chern characters of the generators. For the projection class
 \begin{equation}
-    [p]_0 = \sum_{\substack{I\subseteq\{t_1, \cdots, t_d, u_1, \ldots, u_r\}\\ |I|\ \text{even}}} n_I [e_I]_0,
+    [p]_0 = \sum_{\substack{I\subseteq\{t_1, \ldots, t_d, u_1, \ldots, u_r\}\\ |I|\ \text{even}}} n_I [e_I]_0,
 \end{equation}
 we obtain the Chern number
 \begin{equation}
-    Ch_J([p]_0) = \sum_{\substack{I\subseteq\{t_1, \cdots, t_d, u_1, \ldots, u_r\}\\ |I|\ \text{even}}} n_I Ch_J([e_I]_0).
+    Ch_J([p]_0) = \sum_{\substack{I\subseteq\{t_1, \ldots, t_d, u_1, \ldots, u_r\}\\ |I|\ \text{even}}} n_I Ch_J([e_I]_0).
 \end{equation}
 The value of the Chern numbers on the generators of $K_0$ can be determined explicitly, and one finds \cite{Prodan2016, Liu2022}
  ${\rm Ch}_{J}([e_I]_0)=1$ if $J=I$,  ${\rm Ch}_{J}([e_I]_0)=0$ if $J \not\subseteq I$ and ${\rm Ch}_{J}([e_I]_0) = \mathrm{Pf}( \Theta_{I\setminus J})$ otherwise.
@@ -845,7 +863,7 @@ and find
 \begin{align}
     Ch_{\emptyset} &= n_{\emptyset} - \vartheta n_{\lbrace t_1, u_1\rbrace} - \vartheta n_{\lbrace t_2, u_2 \rbrace} - \vartheta^2 n_{\lbrace t_1, t_2, u_1, u_2 \rbrace} \label{eq:Chernnumbers1}
 \\
-Ch_{\lbrace t_1,t_2 \rbrace} &= n_{\lbrace t_1,t_2\rbrace} \label{eq:Chernnumbers2}%    % + \vartheta n_{\lbrace \rbrace} 
+Ch_{\lbrace t_1,t_2 \rbrace} &= n_{\lbrace t_1,t_2\rbrace} \label{eq:Chernnumbers2}
 \\
 Ch_{\lbrace t_1, u_1 \rbrace} &= n_{\lbrace t_1 ,u_1\rbrace} - \vartheta n_{\lbrace t_2, u_2 \rbrace} - \vartheta n_{\lbrace t_1 t_2 u_1 u_2 \rbrace} \label{eq:Chernnumbers3}
 \\
@@ -861,10 +879,6 @@ Ch_{\lbrace u_1 , u_2 \rbrace} &= n_{\lbrace u_1 , u_2 \rbrace} \label{eq:Chernn
 Ch_{\lbrace t_1, t_2, u_1, u_2  \rbrace} &= n_{\lbrace t_1, t_2, u_1, u_2 \rbrace}
 \label{eq:Chernnumbers8}
 \end{align}
-% In particular, one can see from this that
-% \begin{align}
-%    - \partial_\theta^2   Ch_{\emptyset}(g) =  Ch_{\lbrace \tau_1, \tau_2, u_1, u_2 \rbrace}(g) .
-% \end{align}
 Moreover, the linear system of equations can be inverted to provide a mapping from the Chern numbers onto the integer invariants:
 \begin{align}
        n_{\emptyset} &= Ch_{\emptyset} + \frac{-\vartheta (Ch_{\lbrace t_1, u_1\rbrace} + Ch_{\lbrace t_2, u_2 \rbrace}) + \vartheta^2(\vartheta-3)  Ch_{\lbrace t_1, t_2, u_1, u_2 \rbrace} }{\vartheta-1} \label{eq:Chernlabels1}
@@ -926,8 +940,10 @@ Mathematically, this boils down to a description of the group $\mathbb{Z}$ as a 
 \begin{align}
     \mathbb{Z} = p^0 \mathbb{Z} \triangleright p^1 \mathbb{Z} \triangleright p^2 \mathbb{Z} \triangleright  \ldots,
 \end{align}
-where $p$ is a prime number. The respective quotients $\mathbb{Z} / p^k \mathbb{Z} = \mathbb{Z}_{p^k}$ are the integers modulo $p^k$ and are finite dimensional.
-One can then be sure that model Hamiltonians taken from the group $C^\ast$-algebra of $\mathbb{Z}^d$ can be described in terms of a sequence of finite-dimensional, approximate Hamiltonians with periodic boundary conditions whose resolvent, density of states, etc., converges to the true bulk limit as $k\to \infty$~\cite{Lux2023}. 
+where $p$ is a natural number greater than $1$.
+The respective quotients $\mathbb{Z} / p^k \mathbb{Z} = \mathbb{Z}_{p^k}$ are the integers modulo $p^k$ and are finite dimensional.
+Their direct limit is in general much larger than $\mathbb{Z}$, but the quotient morphisms $\mathbb{Z}\to\mathbb{Z}_{p^k}$ together with the universal property of the limit imply the existence of an injective group morphism onto a dense subspace of the direct limit ~\cite[Chap.~4.1]{Lux2023}.
+One can then be sure that model Hamiltonians taken from the group $C^\ast$-algebra of $\mathbb{Z}^d$ can be described in terms of a sequence of finite-dimensional, approximate Hamiltonians with periodic boundary conditions whose resolvent, density of states, etc., converges to the true bulk limit as $k\to \infty$~\cite[Chap.~4.3]{Lux2023}.
 
 If the $\theta$ matrix contains irrational values, it seems impossible at first to use the prescription of converging periodic boundary conditions.
 Still, we can take a sequence of rational approximations to $\theta$ such that the convergence can be equally ensured as $k\to\infty$ \cite[Ch. 5]{Prodan2017}. 
@@ -974,7 +990,7 @@ given by
      \hat{\rho}(t_i) &=  \hat{T}_i
      \\
      \hat{\pi}_{\vec{\varphi}}(f) &
-     =\sum_{\vec{m} \in V_N} (\alpha_{-\vec{m}}f)(\vec{\varphi}) \otimes \ket{\vec{m}}\bra{\vec{m}}
+     =\sum_{\vec{m} \in V_N} (\alpha_{-\vec{m}}f)(\vec{\varphi}) \ket{\vec{m}}\bra{\vec{m}}
 \end{align}
 for all translation generators $t_i$ and all $f \in C(\hull)$.
 $\hat{T}_i$ is again the translation operator, but this time on the finite lattice with periodic boundary conditions.
@@ -987,7 +1003,7 @@ $\hat{\pi}^\rtimes_{\vec{\varphi}}$ provides us with a finite-dimensional matrix
 % -- representation of *-derivations
 The $u$-derivations are straightforward to compute since they can be obtained directly from the partial derivatives as
 \begin{equation}
-    \pi_{\vec{\varphi}}^\rtimes(\partial_j^u a) = \sum_{\vec{n}\in\mathbb{Z}^d} \sum_{\vec{m}\in\mathbb{Z}^d} (\partial_{\varphi_j} a_{\vec{n}}(\tau_{-\vec{m}} \vec{\varphi})) \hat{T}_{\vec{n}} \ket{\vec{m}}\bra{\vec{m}}  
+    \pi_{\vec{\varphi}}^\rtimes(\partial_j^u a) = \sum_{\vec{n}\in\mathbb{Z}^d} \sum_{\vec{m}\in\mathbb{Z}^d} (\partial_{\varphi_j} a_{\vec{n}}(\tau_{-\vec{m}} \vec{\varphi})) \ket{\vec{m}}\bra{\vec{m}} \hat{T}_{\vec{n}}
     = \partial_{\varphi_j}  \pi_{\vec{\varphi}}^\rtimes(a)
 \end{equation}
 for $a \in \mathscr{A}_\theta$, which we implement numerically using a finite-difference quotient. This recipe works in exactly the same way for the finite-volume approximating algebras $\mathcal{A}_\theta^N$ and their representations $\hat{\pi}^\rtimes_{\vec{\varphi}}$.
@@ -1066,7 +1082,7 @@ Then for any $K\in \mathbb{N}$, there exists a finite constant $C_K$ such that
 \begin{equation}
     | Ch_J(p_F) - \frac{1}{(2\pi)^{r}} \int_{T^r}\dd \vec{\varphi} ~ \hat{Ch}^{\vec{\varphi}}_J(p_F) | \leq \frac{C_K}{(1+|V_N|)^K},
 \end{equation}
-where $J$ is any subset of indices $J\subseteq\{t_1, \cdots, t_d, u_1, \ldots, u_r\}$ of even cardinality.
+where $J$ is any subset of indices $J\subseteq\{t_1, \ldots, t_d, u_1, \ldots, u_r\}$ of even cardinality.
 Thus, the convergence to the thermodynamic limit of the finite-volume approximation with phase space average is faster than any inverse power of the finite supercell's size.
 
 \section{Results}
@@ -1129,16 +1145,20 @@ This can be observed by computing the spectrum of the tight-binding Hamiltonian 
 In Fig.~\ref{fig:Spectrum}, we used the KPM to evaluate the spectrum of the tight-binding Hamiltonian from Eq.~\eqref{eq:tbHamiltonian} with parameter $\hop=1$ and $\xc=5$ on a supercell of size $N_x=N_y=400$. The magnetic texture $\hatn \in C^\infty(T^2, S^2)$ is implemented as in Eq.~\eqref{eq:skx_texture} with phase shift and magnetization parameters $\varphi_1=\varphi_2=\varphi_3=0$ and $m=0$. 
 For the KPM algorithm, we choose $2048$ energy values, $2048$ Chebyshev moments, and $10$ random states.
 The length scale parameter $\vartheta$ takes values in a system of size $N=400$, i.e., $\vartheta=\frac{i}{400}$ with $i=1,\dots,199,201,\dots,399$.
-\figureIIIa
+\figureIII
+\tableI
 
 Let us now inspect the gaps in between the aligned states in the upper block $(U)$ and anti-aligned states in the lower block $(L)$. 
-There are several clear gaps, which are connected to the adiabatic limit $\vartheta\to0$, and the gaps between the lowest energy bands in each block are the widest and clearest. We mark some of them with dots for further examination and number them from bottom to top.
-Besides these gaps, some gaps open near $\vartheta=1/2$. 
+There are several gaps at finite $\vartheta$, which remain opened but narrow for $\vartheta\to0$.
+We refer to those as being connected to the adiabatic limit.
+The gaps between the lowest energy bands in each block are the widest, and some of them have been marked with dots and numbered from bottom to top for further examination.
+Besides these gaps, some gaps open near $\vartheta=1/2$, which only remain open over a short interval of finite $\vartheta$.
 Since those gaps are not connected to the adiabatic limit of smooth textures and are as such not treatable with commutative geometry, we coin them {\it noncommutative spectral gaps}.
-
+%
 To compute all Chern numbers corresponding to the gaps marked with dots, we use the periodic approximating algebra formalism introduced in section \ref{sec:computation}. 
 We first perform an exact diagonalization of the tight-binding Hamiltonian as above on a supercell of size $N_x=N_y=57$ for $\vartheta=\frac{10}{57}$ (the corresponding texture is depicted in Fig.~\ref{fig:skx_texture_scaling} (a)) and from the eigenstates we construct Fermi projection operators according to Eq.~\eqref{eq:Fermi_projection} with Fermi energy $E_F$ inside the chosen gaps. 
-They are representations of projections from the periodic approximate algebra of the noncommutative torus, and we can compute their derivations to evaluate the corresponding Chern numbers as detailed in Eq.~\eqref{eq:approx_Chernnumber}. 
+They are representations of projections from the periodic approximate algebra of the noncommutative torus, and we can compute their derivations to evaluate the corresponding Chern numbers as detailed in Eq.~\eqref{eq:approx_Chernnumber}.
+The partial derivatives $\partial_{\varphi_j}P^{\vec{\varphi}}_F$ are numerically implemented as a difference quotient with $\Delta\varphi_j=10^{-8}$.
 The results are displayed in Table \ref{fig:Spectrum}~(b). 
 From these Chern numbers, we can also immediately extract the $\vartheta$-independent coefficients of the Fermi projection with respect to the $K_0$ group generators by using equations \eqref{eq:Chernlabels1}-\eqref{eq:Chernlabels8}. This gives us a full set of integer labels for the gaps as displayed in Table \ref{fig:Spectrum}~(c).
 
@@ -1154,7 +1174,7 @@ All remaining mixed space first Chern numbers are zero for all marked gaps.
 Lastly, the ${\lbrace t_1, t_2, u_1, u_2 \rbrace }$ Chern labels of the marked gaps are similar to the ${\lbrace t_1, t_2 \rbrace }$ Chern labels, but have a negative sign below and above zero energy. 
 Also, some compensating energy bands need to exist here.
 
-\figureIVa
+\figureIV
 
 % -- main Chern number over the full range of Fermi energies, figure 4
 To investigate further which energy bands exactly contribute to the main Chern numbers, we compute them in dependence on the Fermi energy on a supercell of size $N=57$ for $\vartheta=10/57$ as well as $N=53$ for $\vartheta=20/53$, as shown in Fig.~\ref{fig:ChernHierarchy}. 
@@ -1172,7 +1192,7 @@ The Chern labels of the highest two gaps $U-2$ and $U-1$ are perceivable to be $
 The gaps are less pronounced for the lower block of spin anti-aligned energy states, but the Chern numbers behave the same with a flipped sign and turning point around $E=-3$.
 This is consistent with the known findings from mapping the bands to Landau levels which one finds to contribute $1$ to the Chern number when below and $2$ when above the VSH~\cite{Gobel2017}.
 
-\figureVa
+\figureV
 
 For $\vartheta=20/53$, the gap formation is even less pronounced, and several gaps are not connected to the limit of smooth textures, $\vartheta\to 0$.
 They seem to behave differently from the rules we observe for the connected gaps. 
@@ -1194,15 +1214,15 @@ According to our preliminary consideration $Ch_{\lbrace u_1, u_2 \rbrace }=n_{\l
 In this section, we want to inspect this case further and investigate how the electronic topology will respond to a change in the real-space topology. 
 We first compute the main Chern numbers of the full Fermi energy range for two different areas of the texture's topological phase diagram and then we compute the change of the Chern numbers over a continuous path in parameter space.
 
-\figureVIa
+\figureVI
 
 In Fig.~\ref{fig:ChernHierarchyShift}, we begin with the case $\varphi=\varphi_1+\varphi_2+\varphi_3=\pi$ and $m=0$, for which we get $\mathrm{deg}~\hatn=-1$.  
 This change in parameters compared to the previous section is equal to the time-reversal operation (up to translation) as it switches the overall sign of the entire spin texture. 
 All other parameters are the same as for Fig.~\ref{fig:ChernHierarchy} and, thus, the density of states is also the same as in Fig.~\ref{fig:ChernHierarchy} for $\varphi=0$. This is expected as the time-reversal operation does not affect the energy eigenvalues. 
 Accordingly, the second mixed space Chern number remains unaltered as well.
 
-\figureVIIa
-\figureVIIIa
+\figureVII
+\figureVIII
 
 This is expected for the same reason, since $Ch_{\lbrace t_1, t_2, u_1, u_2 \rbrace }=n_{\lbrace t_1, t_2, u_1, u_2 \rbrace }$ is the coefficient of the quadratic term of the integrated density of states in dependence of the length scale parameter, see Eq.~(\ref{eq:ids_constraint}).
 On the other hand, both first Chern numbers switch their sign. 
@@ -1218,7 +1238,7 @@ $Ch_{\lbrace t_1, t_2, u_1, u_2 \rbrace }$ is $-1$ in $U1^{\prime}$, $-3$ in $U2
 This implies that the first energy band of the block carries a contribution of $1$ to the mixed space Chern number, the second band however carries $2$, and the last band carries $2$ as well.
 For the lower block, the $L1^{\prime}$ and $L-1^{\prime}$ gaps have the same second mixed space Chern numbers as in the upper block, but in the $L2^{\prime}$ gap this Chern number does not converge properly.
 
-\figureIXa
+\figureIX
 
 % -- scan across some line cuts
 To understand what happens between these three points in parameter space which are characterized by different winding numbers of the magnetic texture, we focus next on the change of the spectrum and the change of the main Chern numbers in gap $U1$.
@@ -1233,7 +1253,7 @@ The last line we follow in Fig.~\ref{fig:DoSShifts} (c) starts with the spectrum
 gap closes briefly around $\varphi=0.4\pi$ and the second energy band splits to reopen the $U2$ gap we had before at $m=0$ and $\varphi=0$. Also multiple higher gaps open.
 This is consistent with our expectations as the spectrum at the endpoint is in the same area of the winding number phase diagram from Fig.~\ref{fig:3QskxPD} as the spectrum at $m=0$ and $\varphi=\pi$.
 
-\figureXa
+\figureX
 Next, we examine how the main Chern numbers of the first gap $U1$ or, respectively, $U1^{\prime}$, which is the gap that stays open for most of the parameter range, change along these paths through the parameter space.
 For the top row of Fig.~\ref{fig:ChernShifts}, we computed the exact diagonalization of the tight-binding Hamiltonian on a supercell of size $57$ for $\vartheta=\frac{10}{57}$ and parameters as above and plotted the individual energy eigenvalues. From this diagonalization, we also computed the corresponding main Chern numbers.
 Since we are particularly interested in their response to the discontinuities in the texture, we choose a phase space origin position $\vec{\varphi}$ to move the singularity onto the site at $\vec{x}_0$.
@@ -1255,7 +1275,7 @@ Again for this path, the second Chern number $Ch_{\lbrace t_1, t_2, u_1, u_2 \rb
 
 % -- phase shifts phase diagram
 Since the parameter position of the band crossing at which $Ch_{\lbrace t_1, t_2 \rbrace }$ changes does not coincide with the parameter position of the jumps in winding number, except for at $m=0$, we further scan over the whole relevant area of parameter space to identify its pattern. As displayed in Fig.~\ref{fig:ChernDiagram}, we compute the main Chern numbers for the tight-binding Hamiltonian on a system of size $57$ with parameters as above for $\varphi$ ranging from $0$ to $\pi$ and $m$ ranging from $-2$ to $2$ and a phase space origin set to $\vec{\varphi}=[\varphi,0,0]$.
-\figureXIa
+\figureXI
 
 Here, $Ch_{\lbrace u_1, u_2 \rbrace }$ perfectly reproduces the winding number phase diagram from Fig.~\ref{fig:3QskxPD}, which we already observed for the three paths.
 On the border lines between the different areas, it exhibits singularities at regular distances. Those coincide with the points in parameter space for which a discontinuity in the magnetization texture lies in the immediate vicinity of a lattice site. Due to the different choices of $\vec{\varphi}$ these positions do not coincide with the singularities observed along the paths above. Computing the average over the phase space would cause singularities along the whole border.
@@ -1271,7 +1291,7 @@ We compute the spectrum of the tight-binding Hamiltonian with regularized magnet
 Indeed, along the $m=0$ path in Fig.~\ref{fig:DoSShiftsReg} (a) we clearly see the band crossing at $\varphi=\pi$. The bands of the upper block bend downwards and the bands of the lower block bend upwards. At the top of the lower block, a single band bends upwards until it touches the bottom band of the upper block, crossing the zero energy gap.
 Similarly, in Fig.~\ref{fig:DoSShiftsReg} (b) we also see band crossings along $\varphi=0$ at the parameter positions of the winding number jumps, however with a lower density of states. Since the phase space origin $\vec{\varphi}$ of the texture for this computation was chosen in a way, that the first former singularity would be sitting right on the lattice site with label $\vec{0}$, the first band crossing fully closes the gap while the second crossing leaves a small gap open.
 In Fig.~\ref{fig:DoSShiftsReg} (c), we choose $\vec{\varphi}$ to position the former singularity on the origin lattice site as well. Also here, we can see how states from the lower block bend upwards and cross the gap around $0.1\pi$ where the winding number transition takes place.
-\figureXIIa
+\figureXII
 \figureXIII
 
 Finally, we need to examine the effect of the regularization on the Chern number transitions, which we do in Fig.~\ref{fig:ChernShiftsReg} computed analogously to Fig.~\ref{fig:ChernShifts}, but with the regularization procedure applied. We can observe the behavior of the individual energy eigenstates from the tight-binding Hamiltonian for system size $57$ and the corresponding main Chern numbers.

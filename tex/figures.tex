@@ -43,32 +43,15 @@
 % % Figure 3
 % %--------------------------
 
-\newcommand{\figureIIIa}{
+\newcommand{\figureIII}{
 \begin{figure}[t!]
      \centering
-        \begin{subfigure}[t!]{\textwidth}
-             \centering
-             \caption{\small Density of states.}
-             \includegraphics[width=\textwidth]{figure_03/plots/DoS_kpm_0shift0mag.png}
-             \label{fig:DoS}
-        \end{subfigure}
-        \\
-        \vspace{-5mm}
-        \begin{subfigure}[t!]{0.9\textwidth}
-            \centering
-            \caption{\small Chern numbers at $\vartheta=\frac{10}{57}$.}
-            \label{tab:ChernNum}
-            \resizebox{\textwidth}{!}{\input{../gfx/figure_03/tables/ChernNumber_Table.txt}}
-        \end{subfigure}
-         \\
-        \begin{subfigure}[t!]{\textwidth}
-             \caption{\small Labels of $K$-theory class in $K_0(\mathcal{A})=\mathbb{Z}^8$.}
-             \label{tab:ChernCoef}
-             \centering
-             \resizebox{\textwidth}{!}{\input{../gfx/figure_03/tables/ChernCoefficient_Table.txt}}
-        \end{subfigure}
-        \caption{\small {\bf Full topological classification of the 3$\vec{q}$ skyrmion crystal.} For the gaps labelled by the colored bullet points in the density of states (a), we compute all possible Chern numbers at $\vartheta=\frac{10}{57}$ in Table (b) and extract the corresponding $K$-theory class in Table (c). To a good accuracy, these values are given by integer numbers as expected. }
-        \label{fig:Spectrum}
+    \includegraphics[width=\textwidth]{figure_03/plots/DoS_kpm_0shift0mag.png}
+    \vspace{-10mm}
+    \caption{\small {\bf Electronic spectrum for the 3$\vec{q}$ skyrmion crystal.}
+    The density of states of the tight-binding Hamiltonian coupled to the 3$\vec{q}$ skyrmion crystal is computed over the entire range of length scales $\vartheta$.
+    }
+    \label{fig:Spectrum}
 \end{figure}
 }
 
@@ -76,7 +59,7 @@
 % % Figure 4
 % %--------------------------
 
-\newcommand{\figureIVa}{
+\newcommand{\figureIV}{
 \begin{figure}[t!]
     \centering
     \includegraphics[width=\linewidth]{figure_04/skx_size20_theta10-57_20-53_shift0_mag_0.png}
@@ -90,7 +73,7 @@
 % % Figure 5
 % %--------------------------
 
-\newcommand{\figureVa}{
+\newcommand{\figureV}{
 \begin{figure}[t!]
     \centering
     \includegraphics[width=1.0\linewidth]{figure_05/plots/Chernhierarchy_kpm_0shift0mag.png}
@@ -103,7 +86,7 @@
 % % Figure 6
 % %--------------------------
 
-\newcommand{\figureVIa}{
+\newcommand{\figureVI}{
 \begin{figure}[t!]
     \centering
     \includegraphics[width=\textwidth]{figure_06/skx_size20_theta10-57_20-53_shiftpi_mag_0__shift0_mag0dot7.png}
@@ -117,7 +100,7 @@
 % % Figure 7
 % %--------------------------
 
-\newcommand{\figureVIIa}{
+\newcommand{\figureVII}{
 \begin{figure}[t!]
     \centering
     \includegraphics[width=1.0\linewidth]{figure_07/plots/Chernhierarchy_kpm_pishift0mag.png}
@@ -130,7 +113,7 @@
 % % Figure 8
 % %--------------------------
 
-\newcommand{\figureVIIIa}{
+\newcommand{\figureVIII}{
 \begin{figure}[t!]
     \centering
     \includegraphics[width=1.0\linewidth]{figure_08/plots/Chernhierarchy_kpm_0shift07mag.png}
@@ -143,7 +126,7 @@
 % % Figure 9
 % %--------------------------
 
-\newcommand{\figureIXa}{
+\newcommand{\figureIX}{
 \begin{figure}[t!]
     \centering
     \includegraphics[width=\textwidth]{figure_09/plots/DoS_transitions.png}
@@ -156,7 +139,7 @@
 % % Figure 10
 % %--------------------------
 
-\newcommand{\figureXa}{
+\newcommand{\figureX}{
 \begin{figure}[t!]
      \centering
         \begin{subfigure}[t!]{0.32\textwidth}
@@ -189,7 +172,7 @@
 % % Figure 11
 % %--------------------------
 
-\newcommand{\figureXIa}{
+\newcommand{\figureXI}{
 \begin{figure}[t!]
     \centering
     \includegraphics[width=1.0\linewidth]{figure_11/plots/ChernDiagram3.png}
@@ -203,7 +186,7 @@
 % % Figure 12
 % %--------------------------
 
-\newcommand{\figureXIIa}{
+\newcommand{\figureXII}{
 \begin{figure}[t!]
     \centering
     \centering
@@ -241,4 +224,29 @@
         \caption{\small {\bf Chern number evolution across real-space phase transitions with regularization.} We perform three different line cuts through the phase space spanned by the texture parameters $(m,\varphi)$. We compute the main Chern numbers of the first gap by fixing the IDS to $1+1\cdot\left( \frac{10}{57} \right)^2$ in a system with $57\times57$ sites and $\vartheta=\frac{10}{57}$, the red dashed line marks the Fermi energy positioned in the middle of the gap.}
         \label{fig:ChernShiftsReg}
 \end{figure}
+}
+
+% %--------------------------
+% % Table 1
+% %--------------------------
+
+\newcommand{\tableI}{
+\begin{table}[t!]
+\centering
+\begin{subtable}[t!]{0.9\textwidth}
+    \centering
+    \caption{\small Chern numbers at $\vartheta=\frac{10}{57}$.}
+    \label{tab:ChernNum}
+    \resizebox{\textwidth}{!}{\input{../gfx/figure_03/tables/ChernNumber_Table.txt}}
+\end{subtable}
+ \\
+\begin{subtable}[t!]{\textwidth}
+    \centering
+    \caption{\small Labels of $K$-theory class in $K_0(\mathcal{A})=\mathbb{Z}^8$.}
+    \label{tab:ChernCoef}
+    \resizebox{\textwidth}{!}{\input{../gfx/figure_03/tables/ChernCoefficient_Table.txt}}
+\end{subtable}
+\caption{\small {\bf Full topological classification of the 3$\vec{q}$ skyrmion crystal.} For the gaps labelled by the colored bullet points in the density of states in Fig.~\ref{fig:Spectrum}, we compute all possible Chern numbers at $\vartheta=\frac{10}{57}$ in Table (a) and extract the corresponding $K$-theory class in Table (b). To a good accuracy, these values are given by integer numbers as expected. }
+\label{tab:ChernHierarchy}
+\end{table}
 }

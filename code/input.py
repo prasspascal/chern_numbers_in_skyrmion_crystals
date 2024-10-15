@@ -215,14 +215,14 @@ params_chern_list = [
     {
         "texture": "skx",
         # -- settings of periodic boundary conditions
-        "system_sizes": [57 for _ in range(25)],
-        "q": [10/57 for _ in range(25)], # fixed q value for Chern number calculation
+        "system_sizes": [57 for _ in range(6)],
+        "q": [10/57 for _ in range(6)], # fixed q value for Chern number calculation
         # -- general model parameters
         "t": -1,  # hopping
         "m": 5,   # exchange
         # -- position in phase shift-magnetization phase diagram
-        "shift": [0.0 for _ in range(25)],
-        "mag": [0.0 for _ in range(25)],
+        "shift": [0.0 for _ in range(6)],
+        "mag": [0.0 for _ in range(6)],
         # -- set of labels from whose subsets of even cardinality the Chern numbers are calculated
         "tau1": True,
         "tau2": True,
